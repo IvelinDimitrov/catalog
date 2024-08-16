@@ -90,20 +90,21 @@ export default function Details() {
                   <div className="flex flex-col lg:flex-row lg:space-x-8 justify-between">
                     <div className="w-full lg:w-1/4 ">
                       <h3 className="text-xl font-semibold mb-5 border-b-2 border-green-tx">
-                        Materials &amp; Size
+                        Reviews
                       </h3>
                       {review.map((rev) => (
                         <p
                           key={rev._id}
                           className="border-b-2  border-green-tx mb-4"
                         >
-                          <p className="justify-cente p-2">
-                            Username: {rev.text.review}
-                          </p>
+                          <span className="justify-cente p-2 font-bold">
+                            {rev.author.email}{" "}
+                          </span>
+                          <span className="pl-2 ">Says: {rev.text.review}</span>
                         </p>
                       ))}
                       {review.length === 0 && (
-                        <p className="text-bold text-green-tx">No Comments</p>
+                        <p className="font-bold text-green-tx">No Comments</p>
                       )}
                     </div>
                     <div className="w-full lg:w-1/4">

@@ -5,10 +5,8 @@ const create = async (gameId, text) =>
 const getAll = async (gameId) => {
   const params = new URLSearchParams({
     where: `gameId="${gameId}"`,
+    load: `author=_ownerId:users`,
   });
-
-  console.log(`${BASE_URL}?${params.toString()}`);
-
   return requester.get(`${BASE_URL}?${params.toString()}`);
 };
 export default {
