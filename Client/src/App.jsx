@@ -13,6 +13,7 @@ import NewsLetters from "./components/NewsLetters/Newsletters";
 import Details from "./components/Catalog/Details";
 import CreateItem from "./CreateItem/CreateItem";
 import { AuthContextProvider } from "./AuthContext/AuthContext";
+import Logout from "./components/Logout/Logout";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/logIn" element={<LogIn />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/createitem" element={<CreateItem />}></Route>
+        <Route path="/logout" element={<Logout />}></Route>
       </Routes>
       <NewsLetters />
       <Footer1 />

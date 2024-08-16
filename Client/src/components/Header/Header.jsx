@@ -103,7 +103,7 @@ export function Header() {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/logout"
                   className="font-bold hover:underline underline-offset-8"
                 >
                   Logout

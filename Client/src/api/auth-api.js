@@ -13,3 +13,6 @@ export const register = (email, password) =>
     email,
     password,
   });
+export const logout = () => {
+  requester.get(`${BASE_URL}/logout`);
+};
