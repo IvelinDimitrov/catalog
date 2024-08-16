@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function () {
   return (
     <footer className="border-t border-gray-line  bg-navi text-green-tx">
@@ -8,39 +9,45 @@ export default function () {
           <div className="w-full sm:w-1/6 px-4 mb-8">
             <h3 className="text-lg font-semibold mb-4">Shop</h3>
             <ul>
-              <li>
-                <a href="/shop.html" className="hover:text-testing">
-                  Home
-                </a>
+              <li className="pb-2">
+               <Link
+                to="/"
+                className="hover:text-testing"
+              >
+                Home
+              </Link>
+              </li>
+              <li className="pb-2">
+              <Link
+                to="/catalog"
+                className="hover:text-testing"
+              >
+                Catalog
+              </Link>
+              </li>
+              <li className="pb-2">
+              <Link
+                to="/catalog"
+                className="hover:text-testing "
+              >
+                Team
+              </Link>
+              </li>
+              <li className="pb-2">
+              <Link
+                to="/about"
+                className="hover:text-testing "
+              >
+                About
+              </Link>
               </li>
               <li>
-                <a
-                  href="/single-product-page.html"
-                  className="hover:text-testing"
-                >
-                  Catalog
-                </a>
-              </li>
-              <li>
-                <a href="/shop.html" className="hover:text-testing">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/single-product-page.html"
-                  className="hover:text-testing"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/single-product-page.html"
-                  className="hover:text-testing"
-                >
-                  Contact
-                </a>
+              <Link
+                to="/contacts"
+                className="hover:text-testing "
+              >
+                Contact us
+              </Link>
               </li>
             </ul>
           </div>
@@ -48,15 +55,21 @@ export default function () {
           <div className="w-full sm:w-1/6 px-4 mb-8">
             <h3 className="text-lg font-semibold mb-4">Account</h3>
             <ul>
-              <li>
-                <a href="/register.html" className="hover:text-testing">
-                  Registration
-                </a>
+            <li className="pb-2">
+              <Link
+                to="/register"
+                className="hover:text-testing "
+              >
+                Register
+              </Link>
               </li>
-              <li>
-                <a href="/register.html" className="hover:text-testing">
-                  Login
-                </a>
+              <li className="pb-2">
+              <Link
+                to="/logIn"
+                className="hover:text-testing "
+              >
+                LogIn
+              </Link>
               </li>
             </ul>
           </div>
@@ -66,7 +79,7 @@ export default function () {
             <ul>
               <li className="flex items-center mb-2">
                 <img
-                  src="/assets/images/social_icons/facebook.svg"
+                  src="/images/social/facebook.png"
                   alt="Facebook"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
@@ -76,7 +89,7 @@ export default function () {
               </li>
               <li className="flex items-center mb-2">
                 <img
-                  src="/assets/images/social_icons/twitter.svg"
+                  src="/images/social/twitter.png"
                   alt="Twitter"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
@@ -86,7 +99,7 @@ export default function () {
               </li>
               <li className="flex items-center mb-2">
                 <img
-                  src="/assets/images/social_icons/instagram.svg"
+                  src="/images/social/instagram.png"
                   alt="Instagram"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
@@ -96,8 +109,8 @@ export default function () {
               </li>
               <li className="flex items-center mb-2">
                 <img
-                  src="/assets/images/social_icons/pinterest.svg"
-                  alt="Instagram"
+                  src="/images/social/pinterest.png"
+                  alt="Pinterest"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
                 <a href="#" className="hover:text-testing">
@@ -106,8 +119,8 @@ export default function () {
               </li>
               <li className="flex items-center mb-2">
                 <img
-                  src="/assets/images/social_icons/youtube.svg"
-                  alt="Instagram"
+                  src="/images/social/youtube.png"
+                  alt="Youtube"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
                 <a href="#" className="hover:text-testing">
@@ -121,15 +134,15 @@ export default function () {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <p>
               <img
-                src="assets/images/template-logo.png"
+                src="/images/log/logo-no-background.png"
                 alt="Logo"
                 className="h-[60px] mb-4"
               />
             </p>
-            <p>123 Street Name, Paris, France</p>
+            <p>123 Street Name, Sofia, Bulgaria</p>
             <p className="text-xl font-bold my-4">Phone: (123) 456-7890</p>
             <a href="mailto:info@company.com" className="underline">
-              Email: info@company.com
+              Email: WoodHeaven@company.com
             </a>
           </div>
         </div>
@@ -140,7 +153,7 @@ export default function () {
           {/* Copyright and Links */}
           <div className="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
             <p className="mb-2 font-bold">
-              © 2024 Your Company. All rights reserved.
+              © 2024 WoodHeaven. All rights reserved.
             </p>
             <ul className="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
               <li>
@@ -160,28 +173,10 @@ export default function () {
               </li>
             </ul>
             <p className="text-sm mt-4">
-              Your shop's description goes here. This is a brief introduction to
-              your shop and what you offer.
+            Discover premium quality wood and handcrafted wooden furniture at WoodHeaven. From sustainable timber to custom pieces, we bring the warmth of nature into your home. Explore our collection and find the perfect addition to your space.
             </p>
           </div>
-          {/* Payment Icons */}
-          <div className="w-full lg:w-1/4 text-center lg:text-right">
-            <img
-              src="/assets/images/social_icons/paypal.svg"
-              alt="PayPal"
-              className="inline-block h-8 mr-2"
-            />
-            <img
-              src="/assets/images/social_icons/stripe.svg"
-              alt="Stripe"
-              className="inline-block h-8 mr-2"
-            />
-            <img
-              src="/assets/images/social_icons/visa.svg"
-              alt="Visa"
-              className="inline-block h-8"
-            />
-          </div>
+        
         </div>
       </div>
     </footer>

@@ -44,7 +44,7 @@ export default function NewsLetters() {
               />
               <button
                 type="submit"
-                className="inline-block rounded px-8 py-2 text-center text-sm font-semibold md:text-base hover:bg-green-tx hover:text-navi border-2"
+                className="inline-block rounded px-8 py-2 text-center text-sm font-semibold md:text-base hover:bg-green-tx hover:text-navi border-2 "
               >
                 Subscribe
               </button>

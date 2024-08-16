@@ -1,5 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useScrollToTop from "../Handlerrs/useScrollToTop";
+import { userLogin } from "../../hooks/useAuth";
+import useForm from "../../hooks/userForms";
+import { useState } from "react";
+
+const InitialValues = { email: "", password: "" };
 export default function LogIn() {
+  useScrollToTop();
+  const login = userLogin();
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const logInHandler = async ({ email, password }) => {
+    try {
+      await login(email, password);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+  const { values, changeHandler, submitHandler } = useForm(
+    InitialValues,
+    logInHandler
+  );
   return (
     <section className="min-h-screen flex box-border justify-center items-center bg-background-color">
       <div className="bg-[#ddcaba] rounded-2xl flex max-w-3xl p-5 items-center">
@@ -8,12 +30,17 @@ export default function LogIn() {
           <p className="text-sm mt-4 text-green-tx">
             If you are already a member, easily log in now.
           </p>
-          <form className="flex flex-col gap-4">
+          {error && (
+            <p className="text-sm mt-4 text-[#d02037] font-semibold">{error}</p>
+          )}
+          <form className="flex flex-col gap-4" onSubmit={submitHandler}>
             <input
               className="p-2 mt-8 rounded-xl bg-navi border-2 border-navi focus:border-green-tx focus:outline-none"
               type="email"
               name="email"
               placeholder="Email"
+              value={values.email}
+              onChange={changeHandler}
               required
             />
             <div className="relative">
@@ -23,6 +50,8 @@ export default function LogIn() {
                 name="password"
                 id="password"
                 placeholder="Password"
+                value={values.password}
+                onChange={changeHandler}
                 required
               />
             </div>

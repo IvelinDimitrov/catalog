@@ -33,7 +33,7 @@ export default function DiscoverServices() {
             <div className="mt-4">
               <Link
                 to="/about"
-                className="inline-flex items-center mt-4 font-semibold  lg:mb-0 border-2 px-4 py-2 hover:bg-green-tx hover:text-navi"
+                className="inline-flex items-center mt-4 font-semibold  lg:mb-0 border-2 px-4 py-2 hover:bg-green-tx hover:text-navi transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200"
                 title="Read Our Story"
               >
                 {" "}
@@ -62,7 +62,7 @@ export default function DiscoverServices() {
             <div className="mt-4">
               <Link
                 to="/catalog"
-                className="inline-flex items-center mt-4 font-semibold  lg:mb-0 border-2 px-4 py-2 hover:bg-green-tx hover:text-navi "
+                className="inline-flex items-center mt-4 font-semibold  lg:mb-0 border-2 px-4 py-2 hover:bg-green-tx hover:text-navi transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 "
                 title="Explore Our Portfolio "
               >
                 {" "}
@@ -91,7 +91,7 @@ export default function DiscoverServices() {
             <div className="mt-4">
               <Link
                 to="/team"
-                className="inline-flex items-center mt-4 font-semibold  lg:mb-0   border-2 px-4 py-2 hover:bg-green-tx hover:text-navi"
+                className="inline-flex items-center mt-4 font-semibold  lg:mb-0   border-2 px-4 py-2 hover:bg-green-tx hover:text-navi transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200"
                 title="Explore Our Team "
               >
                 {" "}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import { About } from "./components/About/About";
@@ -12,25 +11,28 @@ import Register from "./components/LogIn/Register";
 import LogIn from "./components/LogIn/LogIn";
 import NewsLetters from "./components/NewsLetters/Newsletters";
 import Details from "./components/Catalog/Details";
+import CreateItem from "./CreateItem/CreateItem";
+import { AuthContextProvider } from "./AuthContext/AuthContext";
 
 function App() {
   return (
-    <>
+    <AuthContextProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/team" element={<Team />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/catalog" element={<Catalog />}></Route>
-        <Route path="/catalog/item" element={<Details />}></Route>
+        <Route path="/catalog/:itemId/item" element={<Details />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>
         <Route path="/reviews" element={<Reviews />}></Route>
         <Route path="/logIn" element={<LogIn />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/createitem" element={<CreateItem />}></Route>
       </Routes>
       <NewsLetters />
       <Footer1 />
-    </>
+    </AuthContextProvider>
   );
 }
 

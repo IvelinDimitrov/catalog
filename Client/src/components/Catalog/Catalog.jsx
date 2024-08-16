@@ -2,21 +2,18 @@ import { useEffect, useState } from "react";
 
 import useScrollToTop from "../Handlerrs/useScrollToTop";
 
-import * as catalogApi from "../../api/catalog-api";
+import catalogApi from "../../api/catalog-api";
 
 import ProductTemplate from "./ProductTemplate/ProductTemplate";
+import { useGetAllItems } from "../../hooks/useItems";
 
 export default function Catalog() {
   useScrollToTop();
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    catalogApi.getAll().then((result) => setItems(result));
-  }, []);
+  const [items] = useGetAllItems();
   return (
     <>
       {/* Shop */}
-      <section id="shop" className="bg-green-tx ">
+      <section id="shop" className="bg-background-color ">
         <div className="container mx-auto ">
           {/* Filter Toggle Button for Mobile */}
           <div className="block md:hidden text-center mb-4">

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
 export default function Contacts() {
-  const [result, setResult] = React.useState("");
+  const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -76,7 +77,7 @@ export default function Contacts() {
                 </div>
                 <button
                   type="submit"
-                  className="mb-6 w-full  px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0 border-2 rounded-full hover:bg-green-tx hover:text-navi "
+                  className="mb-6 w-full  px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0 border-2 rounded-full hover:bg-green-tx hover:text-navi transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 "
                 >
                   Send
                 </button>
