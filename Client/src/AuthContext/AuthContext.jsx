@@ -29,3 +29,7 @@ export function AuthContextProvider(props) {
     </AuthContext.Provider>
   );
 }
+export function useAuthContext() {
+  const authData = useContext(AuthContext);
+  return authData;
+}

@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ReviewsForm from "../Reviews/ReviewsForm";
 import { useGetOneItem } from "../../hooks/useItems";
+import { useAuthContext } from "../../AuthContext/AuthContext";
+import { useGetAllComments } from "../../hooks/useComments";
+
 export default function Details() {
   const { itemId } = useParams();
-  const [items, setItem] = useGetOneItem(itemId);
-  console.log(items);
-
+  const [items] = useGetOneItem(itemId);
+  const [review, setReview] = useGetAllComments(itemId);
   return (
     <>
       {" "}
@@ -88,25 +89,22 @@ export default function Details() {
                 >
                   <div className="flex flex-col lg:flex-row lg:space-x-8 justify-between">
                     <div className="w-full lg:w-1/4 ">
-                      <h3 className="text-xl font-semibold mb-5">
+                      <h3 className="text-xl font-semibold mb-5 border-b-2 border-green-tx">
                         Materials &amp; Size
                       </h3>
-                      <p className="mb-2 pb-2 border-b border-gray-line">
-                        Material:{" "}
-                        <span className="font-semibold">{items.materials}</span>
-                      </p>
-                      <p className="mb-2 pb-2 border-b border-gray-line">
-                        Model height:{" "}
-                        <span className="font-semibold">{items.height} cm</span>
-                      </p>
-                      <p className="mb-2 pb-2 border-b border-gray-line">
-                        Length:{" "}
-                        <span className="font-semibold">{items.length} cm</span>
-                      </p>
-                      <p className="mb-2 pb-2 border-b border-gray-line">
-                        Style:{" "}
-                        <span className="font-semibold">{items.style}</span>
-                      </p>
+                      {review.map((rev) => (
+                        <p
+                          key={rev._id}
+                          className="border-b-2  border-green-tx mb-4"
+                        >
+                          <p className="justify-cente p-2">
+                            Username: {rev.text.review}
+                          </p>
+                        </p>
+                      ))}
+                      {review.length === 0 && (
+                        <p className="text-bold text-green-tx">No Comments</p>
+                      )}
                     </div>
                     <div className="w-full lg:w-1/4">
                       <ReviewsForm key={itemId} itemId={itemId} />

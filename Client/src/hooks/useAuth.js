@@ -23,8 +23,8 @@ export const userRegister = () => {
 export const useLogout = () => {
   const { logout: localLogout } = useContext(AuthContext);
   const logoutHandler = async () => {
-    await logout();
     localLogout();
+    await logout();
   };
   return logoutHandler;
 };

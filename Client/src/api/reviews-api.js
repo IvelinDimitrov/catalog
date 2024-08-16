@@ -1,12 +1,15 @@
 import requester from "./requester";
-const BASE_URL = "http://localhost:3030/jsonstore/catalog";
-const buildUrl = (gameId) => `${BASE_URL}/${gameId}/review`;
-const create = async (gameId, username, text) =>
-  requester.post(buildUrl(gameId), { username, text });
+const BASE_URL = "http://localhost:3030/data/review";
+const create = async (gameId, text) =>
+  requester.post(BASE_URL, { gameId, text });
 const getAll = async (gameId) => {
-  const resutlt = await requester.get(buildUrl(gameId));
-  const reviews = Object.values(resutlt);
-  return reviews;
+  const params = new URLSearchParams({
+    where: `gameId="${gameId}"`,
+  });
+
+  console.log(`${BASE_URL}?${params.toString()}`);
+
+  return requester.get(`${BASE_URL}?${params.toString()}`);
 };
 export default {
   create,
