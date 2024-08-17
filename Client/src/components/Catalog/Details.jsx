@@ -8,7 +8,7 @@ import { useGetAllComments } from "../../hooks/useComments";
 export default function Details() {
   const { itemId } = useParams();
   const [items] = useGetOneItem(itemId);
-  const [review, setReview] = useGetAllComments(itemId);
+  const [review] = useGetAllComments(itemId);
   return (
     <>
       {" "}
