@@ -28,7 +28,7 @@ export default function Catalog() {
                   ))
                 ) : (
                   <div className="text-background-color font-bold flex justify-center">
-                    <p>No Items Added</p>
+                    <p className="text-green-tx">No Items Added</p>
                   </div>
                 )}
               </div>

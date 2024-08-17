@@ -83,15 +83,7 @@ export function Header() {
                   About us
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/reviews"
-                  className="font-bold hover:underline underline-offset-8"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Reviews
-                </Link>
-              </li>
+           
               <li>
                 <Link
                   to="/contacts"
@@ -184,67 +176,12 @@ export function Header() {
 
 export default Header;
 
-/* <ul className="flex flex-col md:flex-row justify-end items-center md:ml-auto space-y-4 md:space-y-0 md:space-x-6">
-<li>
-  <Link
-    to="/"
-    className="font-bold hover:underline underline-offset-8"
-    onClick={() => setIsMobileMenuOpen(false)}
-  >
-    Home
-  </Link>
-</li>
-<li>
-  <Link
-    to="/catalog"
-    className="font-bold hover:underline underline-offset-8"
-    onClick={() => setIsMobileMenuOpen(false)}
-  >
-    All Products
-  </Link>
-</li>
-<li>
-  <Link
-    to="/team"
-    className="font-bold hover:underline underline-offset-8"
-    onClick={() => setIsMobileMenuOpen(false)}
-  >
-    Team
-  </Link>
-</li>
-<li>
-  <Link
-    to="/about"
-    className="font-bold hover:underline underline-offset-8"
-    onClick={() => setIsMobileMenuOpen(false)}
-  >
-    About us
-  </Link>
-</li>
-<li>
-  <Link
-    to="/reviews"
-    className="font-bold hover:underline underline-offset-8"
-    onClick={() => setIsMobileMenuOpen(false)}
-  >
-    Reviews
-  </Link>
-</li>
-<li>
-  <Link
-    to="/contacts"
-    className="font-bold hover:underline underline-offset-8"
-    onClick={() => setIsMobileMenuOpen(false)}
-  >
-    Contacts
-  </Link>
-</li>
-<li>
-  <Link
-    to="/logIn"
-    className="font-bold hover:underline underline-offset-8"
-  >
-    Sign In
-  </Link>
-</li>
-</ul> */
+// <li>
+// <Link
+//   to="/reviews"
+//   className="font-bold hover:underline underline-offset-8"
+//   onClick={() => setIsMobileMenuOpen(false)}
+// >
+//   Reviews
+// </Link>
+// </li>

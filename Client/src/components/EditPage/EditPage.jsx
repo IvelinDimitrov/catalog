@@ -2,20 +2,15 @@ import {  useNavigate, useParams } from "react-router-dom";
 import useForm from "../../hooks/userForms";
 import { useGetOneItem } from "../../hooks/useItems";
 import itemApi from "../../api/catalog-api";
+import { useMemo } from "react";
 
-const initalValues = {
-  title: "",
-  brand: "",
-  numberItems: "",
-  imageUrl: "",
-  description: "",
-};
 
 export default function EditPage() {
   const navigate = useNavigate();
   const {itemId}=useParams()
   const [items, setItem] =useGetOneItem(itemId)
-  const { values, changeHandler, submitHandler } = useForm(Object.assign(initalValues,items),async(values) =>{
+  
+  const { values, changeHandler, submitHandler } = useForm(items,async(values) =>{
   const isConfirmed= confirm('Are you sure you want to Edit this game ?')
   if (isConfirmed) {
     

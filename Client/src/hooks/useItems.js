@@ -10,7 +10,13 @@ export function useGetAllItems() {
 }
 
 export function useGetOneItem(itemId) {
-  const [items, setItem] = useState({});
+  const [items, setItem] = useState({
+    title: "",
+  brand: "",
+  numberItems: "",
+  imageUrl: "",
+  description: "",
+  });
   useEffect(() => {
     (async () => {
       const result = await itemApi.getOne(itemId);
