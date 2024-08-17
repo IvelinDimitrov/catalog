@@ -15,46 +15,9 @@ export default function Catalog() {
       {/* Shop */}
       <section id="shop" className="bg-background-color ">
         <div className="container mx-auto ">
-          {/* Filter Toggle Button for Mobile */}
-          <div className="block md:hidden text-center mb-4">
-            <button
-              id="products-toggle-filters"
-              className="bg-primary text-white py-2 px-4 rounded-full focus:outline-none"
-            >
-              Show Filters
-            </button>
-          </div>
+          
           <div className="flex flex-col md:flex-row">
-            {/* Filters */}
-            <div id="filters" className="w-full md:w-1/4 p-4 hidden md:block">
-              {/* Category Filter */}
-              <div className="mb-6 pb-8 border-b border-gray-line">
-                <h3 className="text-lg font-semibold mb-6">Category</h3>
-                <div className="space-y-2">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      className="form-checkbox custom-checkbox"
-                    />
-                    <span className="ml-2">T-Shirts</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      className="form-checkbox custom-checkbox"
-                    />
-                    <span className="ml-2">Hoodies</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      className="form-checkbox custom-checkbox"
-                    />
-                    <span className="ml-2">Accessories</span>
-                  </label>
-                </div>
-              </div>
-            </div>
+           
             {/* Products List */}
             <div className="w-full md:w-3/4 p-4">
               {/* Products grid */}

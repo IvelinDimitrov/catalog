@@ -7,12 +7,18 @@ export const getAll = async () => {
 };
 
 export const getOne = (itemId) => request.get(`${BASE_URL}/${itemId}`);
+
 export const createItem = (itemId) => request.post(`${BASE_URL}`, itemId);
+
 export const remove=(itemId)=>request.del(`${BASE_URL}/${itemId}`)
+
+export const update=(itemId,itemData)=>request.put( `${BASE_URL}/${itemId}`,itemData)
+
 const itemApi = {
   getAll,
   getOne,
   createItem,
   remove,
+  update
 };
 export default itemApi;

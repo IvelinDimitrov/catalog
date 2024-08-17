@@ -6,7 +6,7 @@ import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
 import Footer1 from "./components/Footer/Footer1";
 import Contacts from "./components/Contacts/Contacts";
-import Reviews from "./components/Reviews/Reviews";
+
 import Register from "./components/LogIn/Register";
 import LogIn from "./components/LogIn/LogIn";
 import NewsLetters from "./components/NewsLetters/Newsletters";
@@ -14,6 +14,7 @@ import Details from "./components/Catalog/Details";
 import CreateItem from "./CreateItem/CreateItem";
 import { AuthContextProvider } from "./AuthContext/AuthContext";
 import Logout from "./components/Logout/Logout";
+import EditPage from "./components/EditPage/EditPage";
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/catalog" element={<Catalog />}></Route>
         <Route path="/catalog/:itemId/item" element={<Details />}></Route>
+        <Route path="/catalog/:itemId/edit" element={<EditPage />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>
-        <Route path="/reviews" element={<Reviews />}></Route>
+        
         <Route path="/logIn" element={<LogIn />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/createitem" element={<CreateItem />}></Route>
@@ -39,3 +41,5 @@ function App() {
 }
 
 export default App;
+// import Reviews from "./components/Reviews/Reviews";
+// <Route path="/reviews" element={<Reviews />}></Route>

@@ -1,6 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import useForm from "../hooks/userForms";
-import { useCreateItem } from "../hooks/useItems";
+import {  useNavigate, useParams } from "react-router-dom";
+import useForm from "../../hooks/userForms";
+import { useGetOneItem } from "../../hooks/useItems";
+import itemApi from "../../api/catalog-api";
+
 const initalValues = {
   title: "",
   brand: "",
@@ -8,21 +10,22 @@ const initalValues = {
   imageUrl: "",
   description: "",
 };
-export default function CreateItem() {
+
+export default function EditPage() {
   const navigate = useNavigate();
-  const createItem = useCreateItem();
-  const createHandler = async (values) => {
-    try {
-      const { _id: itemId } = await createItem(values);
-      navigate(`/catalog/${itemId}/item`);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const { values, changeHandler, submitHandler } = useForm(
-    initalValues,
-    createHandler
-  );
+  const {itemId}=useParams()
+  const [items, setItem] =useGetOneItem(itemId)
+  const { values, changeHandler, submitHandler } = useForm(Object.assign(initalValues,items),async(values) =>{
+  const isConfirmed= confirm('Are you sure you want to Edit this game ?')
+  if (isConfirmed) {
+    
+  await itemApi.update(itemId,values)
+
+  navigate(`/catalog/${itemId}/item`)
+  }  
+    
+  });
+  
   return (
     <section className="min-h-screen flex box-border justify-center items-center bg-background-color">
       <div className="bg-[#ddcaba] rounded-2xl flex max-w-3xl p-5 items-center">
@@ -38,7 +41,7 @@ export default function CreateItem() {
               value={values.title}
               onChange={changeHandler}
               placeholder="Title"
-              required
+              required 
             />
             <div className="relative">
               <input
@@ -101,7 +104,7 @@ export default function CreateItem() {
               className="bg-background-color text-green-tx py-2 rounded-xl hover:scale-105 duration-300 hover:bg-green-tx hover:text-navi font-medium"
               type="submit"
             >
-              Create listing
+              Edit
             </button>
           </form>
         </div>

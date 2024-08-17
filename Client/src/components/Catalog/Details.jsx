@@ -7,16 +7,24 @@ import itemApi from "../../api/catalog-api";
 
 export default function Details() {
   const { itemId } = useParams();
+
   const [items] = useGetOneItem(itemId);
+
   const [review,dispatch] = useGetAllComments(itemId);
+
   const navigate=useNavigate()
+
   const itemDeleteHandler = async () => {
+    const isConfirmed= confirm(`Are you sure you want to Delte this ${items.title}?` )
+    if (!isConfirmed) {
+      return
+    } 
     try {
       await itemApi.remove(itemId);
       navigate('/');
     } catch (err) {
       console.log(err.message);
-    }
+    } 
   };
   return (
     <>
@@ -60,18 +68,24 @@ export default function Details() {
                   <div className="text-2xl font-semibold mb-8">
                     {items.price} лв
                   </div>
-                  <Link to="/">
+                  <Link to={`/contacts`}>
+                    {" "}
+                    <button className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
+                      Contact
+                    </button>
+                  </Link>
+                  <Link to={`/catalog/${itemId}/edit`}>
                     {" "}
                     <button className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
                       Edit
                     </button>
                   </Link>
-                  <Link to="/">
+                 
                     {" "}
                     <button onClick={itemDeleteHandler} className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
                       Delete
                     </button>
-                  </Link>
+                  
                 </div>
                 {/* Additional Information */}
                 <div>
