@@ -4,12 +4,14 @@ import ReviewsForm from "../Reviews/ReviewsForm";
 import { useGetOneItem } from "../../hooks/useItems";
 import { useGetAllComments } from "../../hooks/useComments";
 import itemApi from "../../api/catalog-api";
+import { useAuthContext } from "../../AuthContext/AuthContext";
 
 export default function Details() {
   const { itemId } = useParams();
 
   const [items] = useGetOneItem(itemId);
-
+ const {userId}=useAuthContext()
+console.log(userId);
 
   const [review,dispatch] = useGetAllComments(itemId);
 
@@ -75,7 +77,8 @@ export default function Details() {
                       Contact
                     </button>
                   </Link>
-                  <Link to={`/catalog/${itemId}/edit`}>
+                
+                 { items.ownerId !== userId &&<><Link to={`/catalog/${itemId}/edit`}>
                     {" "}
                     <button className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
                       Edit
@@ -86,6 +89,7 @@ export default function Details() {
                     <button onClick={itemDeleteHandler} className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
                       Delete
                     </button>
+                  </>}
                   
                 </div>
                 {/* Additional Information */}
