@@ -10,6 +10,7 @@ export default function Details() {
 
   const [items] = useGetOneItem(itemId);
 
+
   const [review,dispatch] = useGetAllComments(itemId);
 
   const navigate=useNavigate()

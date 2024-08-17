@@ -19,7 +19,7 @@ export default function EditPage() {
   navigate(`/catalog/${itemId}/item`)
   }  
     
-  });
+  },true);
   
   return (
     <section className="min-h-screen flex box-border justify-center items-center bg-background-color">
