@@ -1,24 +1,21 @@
 import useForm from "../../hooks/userForms";
 import { useAuthContext } from "../../AuthContext/AuthContext";
 import useCreateComment, { useGetAllComments } from "../../hooks/useComments";
-import { useState } from "react";
 const initalValues = {
   review: "",
 };
-export default function ReviewsForm(itemId) {
+export default function ReviewsForm({itemId,dispatch}) {
   const { isAuthenticated, email } = useAuthContext();
-  const id = Object.values(itemId);
-  const itemid = id[0];
   const createComment = useCreateComment();
-  const [pp] = useGetAllComments(itemid);
+
   const { changeHandler, submitHandler, values } = useForm(
     initalValues,
     async (review) => {
       try {
-        const newRev = await createComment(itemid, review);
+        const newRev = await createComment(itemId, review);
 
         dispatch({
-          type: "ADD_COMMENT",
+          type: "ADD_REV",
           payload: {
             ...newRev,
             author: { email },

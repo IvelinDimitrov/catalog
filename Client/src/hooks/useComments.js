@@ -11,7 +11,7 @@ function commentsReduser(state, action) {
     case "GET_ALL":
       return action.payload.slice();
     case "ADD_REV":
-      return [...state.action.payload];
+      return [...state, action.payload];
     default:
       return state;
   }

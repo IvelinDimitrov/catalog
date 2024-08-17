@@ -1,14 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ReviewsForm from "../Reviews/ReviewsForm";
 import { useGetOneItem } from "../../hooks/useItems";
-import { useAuthContext } from "../../AuthContext/AuthContext";
 import { useGetAllComments } from "../../hooks/useComments";
+import itemApi from "../../api/catalog-api";
 
 export default function Details() {
   const { itemId } = useParams();
   const [items] = useGetOneItem(itemId);
-  const [review] = useGetAllComments(itemId);
+  const [review,dispatch] = useGetAllComments(itemId);
+  const navigate=useNavigate()
+  const itemDeleteHandler = async () => {
+    try {
+      await itemApi.remove(itemId);
+      navigate('/');
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
   return (
     <>
       {" "}
@@ -59,7 +68,7 @@ export default function Details() {
                   </Link>
                   <Link to="/">
                     {" "}
-                    <button className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
+                    <button onClick={itemDeleteHandler} className="border border-transparent hover:bg-transparent hover:bg-green-tx text-green-tx hover:text-navi font-semibold py-2 px-4 rounded-full transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 mg">
                       Delete
                     </button>
                   </Link>
@@ -108,7 +117,7 @@ export default function Details() {
                       )}
                     </div>
                     <div className="w-full lg:w-1/4">
-                      <ReviewsForm key={itemId} itemId={itemId} />
+                      <ReviewsForm key={itemId} itemId={itemId} dispatch={dispatch} />
                     </div>
                   </div>
                 </div>

@@ -7,10 +7,12 @@ export const getAll = async () => {
 };
 
 export const getOne = (itemId) => request.get(`${BASE_URL}/${itemId}`);
-export const createItem = (gameData) => request.post(`${BASE_URL}`, gameData);
+export const createItem = (itemId) => request.post(`${BASE_URL}`, itemId);
+export const remove=(itemId)=>request.del(`${BASE_URL}/${itemId}`)
 const itemApi = {
   getAll,
   getOne,
   createItem,
+  remove,
 };
 export default itemApi;
