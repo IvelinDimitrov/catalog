@@ -6,6 +6,7 @@ const initalValues = {
   brand: "",
   numberItems: "",
   imageUrl: "",
+  price:"",
   description: "",
 };
 export default function CreateItem() {
