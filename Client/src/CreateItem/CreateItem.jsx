@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import useForm from "../hooks/userForms";
 import { useCreateItem } from "../hooks/useItems";
+import { useState } from "react";
 const initalValues = {
   title: "",
   brand: "",
@@ -12,12 +13,13 @@ const initalValues = {
 export default function CreateItem() {
   const navigate = useNavigate();
   const createItem = useCreateItem();
+  const [error, setError] = useState("");
   const createHandler = async (values) => {
     try {
       const { _id: itemId } = await createItem(values);
       navigate(`/catalog/${itemId}/item`);
     } catch (error) {
-      console.log(error);
+      setError(error.message)
     }
   };
   const { values, changeHandler, submitHandler } = useForm(
@@ -31,6 +33,9 @@ export default function CreateItem() {
           <h2 className="font-bold text-3xl text-green-tx">
             Create your Listing
           </h2>
+          {error && (
+            <p className="text-sm mt-4 text-[#d02037] font-semibold">{error}</p>
+          )}
           <form className="flex flex-col gap-4" onSubmit={submitHandler}>
             <input
               className="p-2 mt-8 rounded-xl bg-navi border-2 border-navi focus:border-green-tx focus:outline-none"

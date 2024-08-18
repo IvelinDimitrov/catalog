@@ -83,9 +83,9 @@ export default function () {
                   alt="Facebook"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
-                <a href="#" className="hover:text-testing">
+                <Link to='https://facebook.com/' className="hover:text-testing">
                   Facebook
-                </a>
+                </Link>
               </li>
               <li className="flex items-center mb-2">
                 <img
@@ -93,9 +93,9 @@ export default function () {
                   alt="Twitter"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
-                <a href="#" className="hover:text-testing">
+              <Link to='https://x.com/' className="hover:text-testing">
                   Twitter
-                </a>
+                </Link>
               </li>
               <li className="flex items-center mb-2">
                 <img
@@ -103,9 +103,9 @@ export default function () {
                   alt="Instagram"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
-                <a href="#" className="hover:text-testing">
+               <Link to='https://www.instagram.com/' className="hover:text-testing">
                   Instagram
-                </a>
+                </Link>
               </li>
               <li className="flex items-center mb-2">
                 <img
@@ -113,9 +113,9 @@ export default function () {
                   alt="Pinterest"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
-                <a href="#" className="hover:text-testing">
+               <Link to='https://www.pinterest.com/' className="hover:text-testing">
                   Pinterest
-                </a>
+                </Link>
               </li>
               <li className="flex items-center mb-2">
                 <img
@@ -123,9 +123,9 @@ export default function () {
                   alt="Youtube"
                   className="w-4 h-4 transition-transform transform hover:scale-110 mr-2"
                 />
-                <a href="#" className="hover:text-testing">
+                <Link to='https://youtube.com/' className="hover:text-testing">
                   YouTube
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

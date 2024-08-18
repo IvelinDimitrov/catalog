@@ -41,6 +41,7 @@ export default function ReviewsForm({itemId,dispatch}) {
                 placeholder="Enter your review"
                 value={values.review}
                 onChange={changeHandler}
+                required
               />
             </div>
             <div className="flex justify-end">

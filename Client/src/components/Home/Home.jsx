@@ -17,10 +17,7 @@ export default function Home() {
               Wood <span>Heaven</span>
             </h2>
             <p className="my-7">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              suscipit minima blanditiis voluptatem quam numquam voluptates
-              animi velit exercitationem esse impedit doloribus maiores vero
-              sequi dolor, aliquid omnis illum eligendi?
+            Wood Heaven creates luxury wood furniture, blending traditional craftsmanship with modern design. Using only the finest woods, each piece is meticulously handcrafted and sustainably sourced, offering timeless elegance and eco-conscious quality.
             </p>
             <div className="space-x-2">
               <Link

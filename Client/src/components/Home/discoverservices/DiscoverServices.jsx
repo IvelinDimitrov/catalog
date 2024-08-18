@@ -25,10 +25,7 @@ export default function DiscoverServices() {
               Get to Know Us Better.
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-txt">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-              asperiores quo labore nostrum ducimus fugit, amet omnis
-              consequuntur modi, quod quibusdam quidem quos soluta laborum, nemo
-              perferendis illum laudantium sunt.
+            Wood Heaven began with a passion for fine woodworking and a commitment to quality. Over the years, we've grown from a small workshop into a respected name in luxury furniture, blending traditional craftsmanship with modern design. Our dedication to excellence has defined our journey.
             </p>
             <div className="mt-4">
               <Link
@@ -54,10 +51,7 @@ export default function DiscoverServices() {
               Explore Our Creative Projects.
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-txt">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
-              qui officia. A explicabo fugiat commodi facilis laboriosam ab quo
-              cumque quas incidunt, repellat voluptate alias modi reprehenderit,
-              porro molestias.
+            At Wood Heaven, we handpick premium, sustainable woods and blend traditional craftsmanship with modern design. Skilled artisans meticulously craft each piece, ensuring exceptional quality and timeless beauty.
             </p>
             <div className="mt-4">
               <Link
@@ -83,10 +77,7 @@ export default function DiscoverServices() {
               Discover the Talented Minds Behind Our Success.
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-txt">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-              consequuntur molestiae quibusdam assumenda nemo! Fuga voluptatum
-              harum quaerat iste, autem quisquam enim ipsam nesciunt
-              necessitatibus dignissimos animi provident blanditiis veniam.
+            Wood Heaven is powered by a team of skilled artisans, designers, and woodworkers passionate about creating exceptional furniture. Each member brings expertise and dedication, ensuring that every piece reflects our commitment to quality and craftsmanship.
             </p>
             <div className="mt-4">
               <Link
